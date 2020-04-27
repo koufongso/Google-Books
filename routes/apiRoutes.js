@@ -5,24 +5,28 @@ const key = require("../keys");
 
 router.get("/books", (req, res) => {
     db.Books.find({}, (err, result) => {
+        if(err) res.status(422).json(err);
         res.json(result);
     });
 });
 
 router.get("/books/:id", (req, res) => {
     db.Books.findOne({ bookID: req.params.id }, (err, result) => {
+        if(err) res.status(422).json(err);
         res.json(result);
     });
 });
 
 router.post("/books", (req, res) => {
     db.Books.create(req.body, (err, result) => {
+        if(err) res.status(422).json(err);
         res.json(result);
     });
 })
 
 router.delete("/books/:id", (req, res) => {
     db.Books.deleteOne({ bookID: req.params.id }, (err, result) => {
+        if(err) res.status(422).json(err);
         res.json(result);
     });
 })
