@@ -29,9 +29,6 @@ router.delete("/books/:id", (req, res) => {
 
 
 router.get("/search/:name", (req, res) => {
-    console.log("search")
-    let name = 
-    console.log(`https://www.googleapis.com/books/v1/volumes?q=${req.params.name}&projection=full&key=${key}`)
     axios.get(`https://www.googleapis.com/books/v1/volumes?q=${req.params.name}&projection=full&key=${key}`)
         .then((response) => {
             // console.log(response);
