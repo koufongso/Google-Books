@@ -4,6 +4,7 @@ import Jumbotron from '../Jumbotron';
 import SerachBar from '../SearchBar';
 import axios from 'axios';
 import BookCard from '../BookCard';
+const key = require('../../../../keys');
 
 class Home extends Component {
     state = { currentBook: "", result: undefined }
@@ -21,7 +22,7 @@ class Home extends Component {
         let name = this.state.currentBook.trim();
         if (name) {
             console.log("call api");
-            axios.get(`https://www.googleapis.com/books/v1/volumes?q=${name}&projection=full&key=AIzaSyDHwEI36eGIZ3Poo0A_HD_Fx220i1sBmk0`)
+            axios.get(`https://www.googleapis.com/books/v1/volumes?q=${name}&projection=full&key=${key}`)
                 .then((response) => {
                     console.log(response);
                     this.setState({ result: response });
