@@ -13,7 +13,6 @@ class BookCard extends Component {
             link: props.link,
             saved: props.saved
         }
-        console.log(this.state)
     }
 
     componentDidMount() {
@@ -49,7 +48,6 @@ class BookCard extends Component {
     unSaveBook = () => {
         axios.delete(`/api/books/${this.state.id}`)
             .then((response) => {
-                console.log(response)
                 if (response.data) {
                     this.setState({ saved: false });
                 } else {
