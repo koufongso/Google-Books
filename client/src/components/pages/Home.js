@@ -23,7 +23,7 @@ class Home extends Component {
             console.log("call api");
             axios.get(`https://www.googleapis.com/books/v1/volumes?q=${name}&projection=full&key=AIzaSyDHwEI36eGIZ3Poo0A_HD_Fx220i1sBmk0`)
                 .then((response) => {
-                    // console.log(response);
+                    console.log(response);
                     this.setState({ result: response });
                 })
         }
@@ -52,7 +52,7 @@ class Home extends Component {
                                 id = {id}
                                 title={volumeInfo.title}
                                 authors={volumeInfo.authors}
-                                thumbnail={volumeInfo.imageLinks.thumbnail}
+                                thumbnail={volumeInfo.imageLinks? volumeInfo.imageLinks.thumbnail:""}
                                 link={volumeInfo.infoLink}
                                 description={volumeInfo.description}
                                 saved={false}

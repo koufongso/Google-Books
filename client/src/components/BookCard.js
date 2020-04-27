@@ -7,12 +7,13 @@ class BookCard extends Component {
         this.state = {
             id: props.id,
             title: props.title,
-            authors: props.authors,
+            authors: props.authors ? props.authors : [],
             thumbnail: props.thumbnail,
             description: props.description,
             link: props.link,
             saved: props.saved
         }
+        console.log(this.state)
     }
 
     componentDidMount() {
