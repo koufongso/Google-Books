@@ -1,3 +1,3 @@
-const apiKey = 'AIzaSyDHwEI36eGIZ3Poo0A_HD_Fx220i1sBmk0';
+const apiKey = '########'; // replace it with the Google Books API key
 
 module.exports = apiKey;
